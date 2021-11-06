@@ -18,8 +18,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         mapView.delegate = self
         
-        let sourceLocation = CLLocationCoordinate2D(latitude: 40.759011, longitude: -73.984472)
-        let destinationLocation = CLLocationCoordinate2D(latitude: 40.748441, longitude: -73.985564)
+        let sourceLocation = CLLocationCoordinate2D(latitude: 55.839379, longitude: 37.493506)
+        let destinationLocation = CLLocationCoordinate2D(latitude: 55.855688, longitude:  37.478125)
         
         let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
         let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
@@ -28,14 +28,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
         
         let sourceAnnotation = MKPointAnnotation()
-        sourceAnnotation.title = "Times Square"
+        sourceAnnotation.title = "Дом"
         
         if let location = sourcePlaceMark.location {
             sourceAnnotation.coordinate = location.coordinate
         }
         
         let destinationAnnotation = MKPointAnnotation()
-        destinationAnnotation.title = "Empire State Building"
+        destinationAnnotation.title = "Работа"
         
         if let location = destinationPlacemark.location {
             destinationAnnotation.coordinate = location.coordinate
@@ -71,7 +71,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = .red
+        renderer.strokeColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
             renderer.lineWidth = 4.0
         
             return renderer
